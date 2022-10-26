@@ -399,7 +399,7 @@ export const getConstellationFortune = async (date, dateType) => {
         res.push({
           name: toLowerLine(item.key),
           value: `${dateType}${item.name}: ${value}`,
-          color: getColor(),
+          color: colors,
         })
       })
     } else {
@@ -409,7 +409,7 @@ export const getConstellationFortune = async (date, dateType) => {
         res.push({
           name: toLowerLine(item.key),
           value: `${dateType}${item.name}: ${value}`,
-          color: getColor(),
+          color: colors,
         })
       })
     }
@@ -706,7 +706,7 @@ export const getAggregatedData = async () => {
     content: poetryContent = DEFAULT_OUTPUT.poetryContent,
   } = await getPoetry()
   // 获取插槽中的数据
-  const slotParams = getSlotList().map((item) => ({ name: item.keyword, value: item.checkout, color: getColor() }))
+  const slotParams = getSlotList().map((item) => ({ name: item.keyword, value: item.checkout, color: colors }))
 
   if (Object.prototype.toString.call(config.USERS) !== '[object Array]') {
     console.error('配置文件中找不到USERS数组')
@@ -721,14 +721,14 @@ export const getAggregatedData = async () => {
     const weatherMessage = Object.keys(weatherInfo).map((item) => ({
       name: toLowerLine(item),
       value: weatherInfo[item] || '获取失败',
-      color: getColor(),
+      color: colors,
     }))
 
     // 统计日列表计算日期差
     const dateDiffParams = getDateDiffList(user.customizedDateList).map((item) => ({
       name: item.keyword,
       value: item.diffDay,
-      color: getColor(),
+      color: colors,
     }))
 
     // 获取生日/生日信息
@@ -744,25 +744,25 @@ export const getAggregatedData = async () => {
     const tianApiGreeting = [{
       name: toLowerLine('tianApiMorningGreeting'),
       value: await getTianApiMorningGreeting(),
-      color: getColor(),
+      color: colors,
     }, {
       name: toLowerLine('tianApiEveningGreeting'),
       value: await getTianApiEveningGreeting(),
-      color: getColor(),
+      color: colors,
     }].filter((it) => it.value)
 
     // 天行-天气
     const tianApiWeather = (await getTianApiWeather(user) || []).map((it, index) => Object.keys((it)).filter((weatherKey) => ['province', 'area', 'weatherimg'].indexOf(weatherKey) === -1).map((key) => ({
       name: toLowerLine(`tianApiWeather_${key}_${index}`),
       value: it[key],
-      color: getColor(),
+      color: colors,
     }))).flat()
 
     // 天行-热榜
     const tianApiNetworkHot = [{
       name: toLowerLine('tianApiNetworkHot'),
       value: await getTianApiNetworkHot(config.TIAN_API && config.TIAN_API.networkHotType),
-      color: getColor(),
+      color: colors,
     }]
     // 集成所需信息
     const wxTemplateParams = [
