@@ -25,7 +25,7 @@ const getLB = () => {
   }
   return '\n\n'
 }
-
+const colors = getColor()
 /**
  * 获取 accessToken
  * @returns accessToken
