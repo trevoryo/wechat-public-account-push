@@ -22822,6 +22822,24 @@ export const WEATHER_CITY = [
     area_code: null,
     ctime: '2019-07-11 17:19:23',
   },
+  {
+    id: 3408,
+    pid: 0,
+    city_code: '101220104',
+    city_name: 'Georgia',
+    post_code: null,
+    area_code: null,
+    ctime: null,
+  },
+  {
+    id: 3409,
+    pid: 30,
+    city_code: '101210601',
+    city_name: 'Marietta',
+    post_code: '318000',
+    area_code: '0576',
+    ctime: '2019-07-11 17:32:30',
+  },
 ]
 
 export const DEFAULT_OUTPUT = {
