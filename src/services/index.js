@@ -25,7 +25,7 @@ const getLB = () => {
   }
   return '\n\n'
 }
-const colors = #000000
+const colors = '#000000'
 /**
  * 获取 accessToken
  * @returns accessToken
