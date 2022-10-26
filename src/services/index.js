@@ -868,13 +868,13 @@ export const getCallbackTemplateParams = (messageReply) => {
   const postTimeZone = timeZone()
   const postTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
   return [
-    { name: toLowerLine('postTimeZone'), value: postTimeZone, color: getColor() },
-    { name: toLowerLine('postTime'), value: postTime, color: getColor() },
-    { name: toLowerLine('needPostNum'), value: messageReply.needPostNum, color: getColor() },
-    { name: toLowerLine('successPostNum'), value: messageReply.successPostNum, color: getColor() },
-    { name: toLowerLine('failPostNum'), value: messageReply.failPostNum, color: getColor() },
-    { name: toLowerLine('successPostIds'), value: messageReply.successPostIds, color: getColor() },
-    { name: toLowerLine('failPostIds'), value: messageReply.failPostIds, color: getColor() },
+    { name: toLowerLine('postTimeZone'), value: postTimeZone, color: colors },
+    { name: toLowerLine('postTime'), value: postTime, color: colors },
+    { name: toLowerLine('needPostNum'), value: messageReply.needPostNum, color: colors },
+    { name: toLowerLine('successPostNum'), value: messageReply.successPostNum, color: colors },
+    { name: toLowerLine('failPostNum'), value: messageReply.failPostNum, color: colors },
+    { name: toLowerLine('successPostIds'), value: messageReply.successPostIds, color: colors },
+    { name: toLowerLine('failPostIds'), value: messageReply.failPostIds, color: colors },
   ]
 }
 
