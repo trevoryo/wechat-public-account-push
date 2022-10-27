@@ -22825,7 +22825,7 @@ export const WEATHER_CITY = [
   {
     id: 3408,
     pid: 0,
-    city_code: '401105100',
+    city_code: '',
     city_name: 'Georgia',
     post_code: null,
     area_code: null,
