@@ -9,7 +9,7 @@ export const selfDayjs = (time) => {
   if (dayjs.tz.guess() === 'UTC' && time) {
     return dayjs(time).subtract('5', 'hour')
   }
-  return dayjs(time).tz('Georgia/Marietta')
+  return dayjs(time).tz('America/New_York')
 }
 
 /* istanbul ignore next */
